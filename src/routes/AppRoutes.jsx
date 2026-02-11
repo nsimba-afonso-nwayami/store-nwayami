@@ -12,6 +12,7 @@ import NotFound from "../pages/site/NotFound";
 
 //Autenticação
 import Login from "../pages/auth/Login";
+import Register from "../pages/auth/Register";
 
 export default function AppRoutes() {
   return (
@@ -29,6 +30,7 @@ export default function AppRoutes() {
 
       {/*Rotas de autenticação */}
       <Route path="/login" element={<Login />} />
+      <Route path="/criar-conta" element={<Register />} />
     </Routes>
   );
 }
