@@ -38,7 +38,7 @@ export default function Hero() {
                 Encontre os melhores eletrodomésticos para sua casa.
               </p>
               <Link
-                to="/produtos/eletrodomesticos"
+                to="/categoria/eletrodomesticos"
                 className="bg-orange-500 text-neutral-50 px-6 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
               >
                 Ver Produtos
@@ -64,7 +64,7 @@ export default function Hero() {
                 Painéis solares, baterias e equipamentos elétricos confiáveis.
               </p>
               <Link
-                to="/produtos/energia"
+                to="/categoria/energia"
                 className="bg-orange-500 text-neutral-50 px-6 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
               >
                 Ver Produtos
@@ -90,7 +90,7 @@ export default function Hero() {
                 TVs, sistemas de som e equipamentos para entretenimento.
               </p>
               <Link
-                to="/produtos/imagem-e-som"
+                to="/categoria/imagem-e-som"
                 className="bg-orange-500 text-neutral-50 px-6 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
               >
                 Ver Produtos
@@ -116,7 +116,7 @@ export default function Hero() {
                 Impressoras, suprimentos e soluções para escritórios e empresas.
               </p>
               <Link
-                to="/produtos/impressao"
+                to="/categoria/impressao"
                 className="bg-orange-500 text-neutral-50 px-6 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
               >
                 Ver Produtos
@@ -142,7 +142,7 @@ export default function Hero() {
                 Computadores, notebooks, acessórios e componentes de qualidade.
               </p>
               <Link
-                to="/produtos/informatica"
+                to="/categoria/informatica"
                 className="bg-orange-500 text-neutral-50 px-6 py-3 rounded-lg font-bold uppercase hover:bg-orange-600 transition"
               >
                 Ver Produtos
