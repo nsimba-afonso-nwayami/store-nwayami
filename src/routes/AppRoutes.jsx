@@ -16,7 +16,7 @@ export default function AppRoutes() {
       {/*Rotas do site */}
       <Route path="/" element={<Home />} />
       <Route path="/produtos" element={<Produtos />} />
-      <Route path="/produtos/detalhes" element={<DetalhesProduto />} />
+      <Route path="/produtos/detalhe/:id" element={<DetalhesProduto />} />
       <Route path="/categoria" element={<Categoria />} />
       <Route path="/carrinho" element={<Carrinho />} />
       <Route path="/sobre" element={<Sobre />} />
