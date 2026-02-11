@@ -1,6 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 //Site
 import Home from "../pages/site/Home";
+import Produtos from "../pages/site/Produtos";
+import DetalhesProduto from "../pages/site/DetalhesProduto";
+import Categoria from "../pages/site/Categoria";
+import Carrinho from "../pages/site/Carrinho";
+import  Sobre from "../pages/site/Sobre";
+import  Contato from "../pages/site/Contato";
+import  PoliticaPrivacidade from "../pages/site/PoliticaPrivacidade";
 import NotFound from "../pages/site/NotFound";
 
 export default function AppRoutes() {
@@ -8,6 +15,13 @@ export default function AppRoutes() {
     <Routes>
       {/*Rotas do site */}
       <Route path="/" element={<Home />} />
+      <Route path="/produtos" element={<Produtos />} />
+      <Route path="/produtos/detalhes" element={<DetalhesProduto />} />
+      <Route path="/categoria" element={<Categoria />} />
+      <Route path="/carrinho" element={<Carrinho />} />
+      <Route path="/sobre" element={<Sobre />} />
+      <Route path="/contato" element={<Contato />} />
+      <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
