@@ -32,14 +32,19 @@ export default function Footer() {
           <ul className="space-y-2 text-neutral-400">
             <li>
               <Link
-                to="/politicas"
+                to="/politica-privacidade"
                 className="hover:text-orange-500 transition"
               >
                 Politicas e Privacidade
               </Link>
             </li>
             <li>
-              <Link to="/servicos" className="hover:text-orange-500 transition">
+              <Link
+                to="https://nwayami.vercel.app"
+                className="hover:text-orange-500 transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Prestação de Serviços
               </Link>
             </li>
