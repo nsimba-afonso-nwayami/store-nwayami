@@ -10,6 +10,9 @@ import  Contato from "../pages/site/Contato";
 import  PoliticaPrivacidade from "../pages/site/PoliticaPrivacidade";
 import NotFound from "../pages/site/NotFound";
 
+//Autenticação
+import Login from "../pages/auth/Login";
+
 export default function AppRoutes() {
   return (
     <Routes>
@@ -23,6 +26,9 @@ export default function AppRoutes() {
       <Route path="/contato" element={<Contato />} />
       <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
       <Route path="*" element={<NotFound />} />
+
+      {/*Rotas de autenticação */}
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 }
