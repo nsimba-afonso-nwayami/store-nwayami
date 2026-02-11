@@ -198,7 +198,7 @@ export default function Produtos() {
                 </span>
 
                 <Link
-                  to={`/produto/${produto.id}`}
+                  to={`/produtos/detalhe/${produto.id}`}
                   className="mt-auto block text-center bg-orange-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-orange-600 transition"
                 >
                   Ver produto
