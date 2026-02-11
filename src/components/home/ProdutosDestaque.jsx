@@ -52,7 +52,7 @@ export default function ProdutosDestaque() {
             </span>
 
             <Link
-              to="/produto/1"
+              to="/produtos/detalhe/1"
               className="mt-auto block text-center bg-orange-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-orange-600 transition"
             >
               Ver produto
@@ -82,7 +82,7 @@ export default function ProdutosDestaque() {
             </span>
 
             <Link
-              to="/produto/2"
+              to="/produtos/detalhe/2"
               className="mt-auto block text-center bg-orange-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-orange-600 transition"
             >
               Ver produto
@@ -112,7 +112,7 @@ export default function ProdutosDestaque() {
             </span>
 
             <Link
-              to="/produto/3"
+              to="/produtos/detalhe/3"
               className="mt-auto block text-center bg-orange-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-orange-600 transition"
             >
               Ver produto
@@ -142,7 +142,7 @@ export default function ProdutosDestaque() {
             </span>
 
             <Link
-              to="/produto/4"
+              to="/produtos/detalhe/4"
               className="mt-auto block text-center bg-orange-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-orange-600 transition"
             >
               Ver produto
@@ -172,7 +172,7 @@ export default function ProdutosDestaque() {
             </span>
 
             <Link
-              to="/produto/5"
+              to="/produtos/detalhe/5"
               className="mt-auto block text-center bg-orange-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-orange-600 transition"
             >
               Ver produto
@@ -202,7 +202,7 @@ export default function ProdutosDestaque() {
             </span>
 
             <Link
-              to="/produto/6"
+              to="/produtos/detalhe/6"
               className="mt-auto block text-center bg-orange-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-orange-600 transition"
             >
               Ver produto
@@ -232,7 +232,7 @@ export default function ProdutosDestaque() {
             </span>
 
             <Link
-              to="/produto/7"
+              to="/produtos/detalhe/7"
               className="mt-auto block text-center bg-orange-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-orange-600 transition"
             >
               Ver produto
@@ -262,7 +262,7 @@ export default function ProdutosDestaque() {
             </span>
 
             <Link
-              to="/produto/8"
+              to="/produtos/detalhe/8"
               className="mt-auto block text-center bg-orange-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-orange-600 transition"
             >
               Ver produto
