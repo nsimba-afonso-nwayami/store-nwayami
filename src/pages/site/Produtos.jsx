@@ -1,5 +1,6 @@
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import Produtoss from "../../components/produtos/Produtos";
 
 export default function Produtos() {
   return (
@@ -8,6 +9,8 @@ export default function Produtos() {
 
       {/* Header */}
       <Header />
+
+      <Produtoss />
 
       {/* Footer */}
       <Footer />
