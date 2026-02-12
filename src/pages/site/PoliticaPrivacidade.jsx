@@ -1,5 +1,6 @@
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import WhatsAppButton from "../../components/WhatsAppButton";
 
 export default function PoliticaPrivacidade() {
   return (
@@ -136,6 +137,9 @@ export default function PoliticaPrivacidade() {
           </div>
         </div>
       </section>
+
+      {/* Botão WhatsApp fixo */}
+      <WhatsAppButton phone="244972614886" size={64} />
 
       <Footer />
     </>
