@@ -13,6 +13,7 @@ import NotFound from "../pages/site/NotFound";
 //Autenticação
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
+import RecuperarSenha from "../pages/auth/RecuperarSenha";
 
 export default function AppRoutes() {
   return (
@@ -31,6 +32,7 @@ export default function AppRoutes() {
       {/*Rotas de autenticação */}
       <Route path="/login" element={<Login />} />
       <Route path="/criar-conta" element={<Register />} />
+      <Route path="/recuperar-senha" element={<RecuperarSenha />} />
     </Routes>
   );
 }
