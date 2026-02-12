@@ -30,6 +30,7 @@ export default function Register() {
                 id="nome"
                 placeholder="Seu nome completo"
                 className="px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                required
               />
             </div>
 
@@ -46,6 +47,24 @@ export default function Register() {
                 id="email"
                 placeholder="seuemail@exemplo.com"
                 className="px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                required
+              />
+            </div>
+
+            {/* Telefone */}
+            <div className="flex flex-col">
+              <label
+                htmlFor="telefone"
+                className="text-sm font-semibold text-neutral-700 mb-1"
+              >
+                Telefone
+              </label>
+              <input
+                type="tel"
+                id="telefone"
+                placeholder="923000000"
+                className="px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                required
               />
             </div>
 
@@ -62,6 +81,7 @@ export default function Register() {
                 id="senha"
                 placeholder="Digite sua senha"
                 className="px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                required
               />
             </div>
 
@@ -78,6 +98,7 @@ export default function Register() {
                 id="confirmarSenha"
                 placeholder="Repita sua senha"
                 className="px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                required
               />
             </div>
 
