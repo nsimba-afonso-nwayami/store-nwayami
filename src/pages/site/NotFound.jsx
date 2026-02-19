@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
 
 export default function NotFound() {
   return (
     <>
       <title>Página não encontrada | Nwayami Store</title>
-      <Header />
 
       <section className="w-full min-h-[70vh] bg-neutral-100 pt-47 pb-16 flex items-center">
         <div className="max-w-xl mx-auto px-4">
@@ -48,8 +45,6 @@ export default function NotFound() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

@@ -1,7 +1,5 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
 
 import ProdutoImg1 from "../../assets/img/hero1.jpg";
 import ProdutoImg2 from "../../assets/img/hero2.jpg";
@@ -54,7 +52,6 @@ export default function DetalhesProduto() {
 
   return (
     <>
-      <Header />
 
       <section className="w-full bg-neutral-100 py-16 pt-47">
         <div className="max-w-7xl mx-auto px-4">
@@ -114,8 +111,6 @@ export default function DetalhesProduto() {
           )}
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

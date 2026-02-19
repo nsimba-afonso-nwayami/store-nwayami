@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
 
 import ProdutoImg1 from "../../assets/img/hero1.jpg";
 import ProdutoImg2 from "../../assets/img/hero2.jpg";
@@ -28,7 +26,6 @@ export default function Carrinho() {
   return (
     <>
       <title>Carrinho | Nwayami Store</title>
-      <Header />
 
       <section className="w-full bg-neutral-100 py-16 pt-47">
         <div className="max-w-7xl mx-auto px-4">
@@ -127,8 +124,6 @@ export default function Carrinho() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

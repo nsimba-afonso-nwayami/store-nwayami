@@ -1,12 +1,7 @@
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
-
 export default function Sobre() {
   return (
     <>
       <title>Sobre | Nwayami Store</title>
-
-      <Header />
 
       <section className="w-full bg-neutral-100 pt-47 pb-16">
         <div className="max-w-6xl mx-auto px-4">
@@ -95,8 +90,6 @@ export default function Sobre() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

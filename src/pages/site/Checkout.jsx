@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
 
 export default function Checkout() {
   return (
     <>
       <title>Checkout | Nwayami Store</title>
-      <Header />
 
       <section className="w-full bg-neutral-50 py-16 pt-47">
         <div className="max-w-7xl mx-auto px-4">
@@ -173,8 +170,6 @@ export default function Checkout() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

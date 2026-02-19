@@ -1,7 +1,5 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
 
 import ProdutoImg1 from "../../assets/img/hero1.jpg";
 import ProdutoImg2 from "../../assets/img/hero2.jpg";
@@ -148,8 +146,6 @@ export default function Categoria() {
           )}
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

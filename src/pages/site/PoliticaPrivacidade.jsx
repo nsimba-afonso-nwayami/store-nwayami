@@ -1,13 +1,9 @@
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
 import WhatsAppButton from "../../components/WhatsAppButton";
 
 export default function PoliticaPrivacidade() {
   return (
     <>
       <title>Política de Privacidade | Nwayami Store</title>
-
-      <Header />
 
       <section className="w-full bg-neutral-100 pt-47 pb-16">
         <div className="max-w-4xl mx-auto px-4">
@@ -140,8 +136,6 @@ export default function PoliticaPrivacidade() {
 
       {/* Botão WhatsApp fixo */}
       <WhatsAppButton phone="244972614886" size={64} />
-
-      <Footer />
     </>
   );
 }

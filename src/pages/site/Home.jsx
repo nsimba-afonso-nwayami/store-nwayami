@@ -1,5 +1,3 @@
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
 import WhatsAppButton from "../../components/WhatsAppButton";
 import Hero from "../../components/home/Hero";
 import ProdutosDestaque from "../../components/home/ProdutosDestaque";
@@ -11,9 +9,6 @@ export default function Home() {
     <>
       <title>Nwayami Store</title>
 
-      {/* Header */}
-      <Header />
-
       <Hero />
       <ProdutosDestaque />
       <Categorias />
@@ -21,9 +16,6 @@ export default function Home() {
 
       {/* Botão WhatsApp fixo */}
       <WhatsAppButton phone="244972614886" size={64} />
-
-      {/* Footer */}
-      <Footer />
     </>
   );
 }
