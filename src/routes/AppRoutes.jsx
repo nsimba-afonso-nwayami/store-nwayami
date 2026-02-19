@@ -7,6 +7,7 @@ import Categoria from "../pages/site/Categoria";
 import Carrinho from "../pages/site/Carrinho";
 import Sobre from "../pages/site/Sobre";
 import Contato from "../pages/site/Contato";
+import Checkout from "../pages/site/Checkout";
 import PoliticaPrivacidade from "../pages/site/PoliticaPrivacidade";
 import NotFound from "../pages/site/NotFound";
 
@@ -32,6 +33,7 @@ export default function AppRoutes() {
       <Route path="/produtos/detalhe/:id" element={<DetalhesProduto />} />
       <Route path="/categoria/:nome" element={<Categoria />} />
       <Route path="/carrinho" element={<Carrinho />} />
+      <Route path="/checkout" element={<Checkout />} />
       <Route path="/sobre" element={<Sobre />} />
       <Route path="/contato" element={<Contato />} />
       <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
