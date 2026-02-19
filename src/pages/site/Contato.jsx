@@ -10,7 +10,7 @@ export default function Contato() {
           {/* Título */}
           <div className="text-center mb-12">
             <h1 className="text-3xl md:text-4xl font-bold text-neutral-800">
-              Fale Conosco
+              Fale Connosco
             </h1>
             <p className="text-neutral-600 mt-3">
               Entre em contato com a NWAYAMI STORE para informações, compras ou
