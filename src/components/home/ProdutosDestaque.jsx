@@ -90,7 +90,7 @@ export default function ProdutosDestaque() {
               </span>
 
               <Link
-                to={`/produtos/detalhe/${produto.id}`}
+                to={`/produtos/${produto.id}`}
                 className="mt-auto block text-center bg-orange-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-orange-600 transition"
               >
                 Ver produto
