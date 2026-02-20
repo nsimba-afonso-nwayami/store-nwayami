@@ -28,6 +28,8 @@ export default function Header() {
     carregarCategorias();
   }, []);
 
+  const enableLoop = categorias.length > 5;
+
   return (
     <header className="fixed top-0 left-0 w-full bg-neutral-900 border-b border-neutral-800 shadow-lg z-50">
       {/* Topo principal */}
@@ -116,7 +118,7 @@ export default function Header() {
               delay: 2000,
               disableOnInteraction: false,
             }}
-            loop={true}
+            loop={enableLoop}
           >
             {categorias.map((cat, index) => (
               <SwiperSlide key={index} style={{ width: "auto" }}>
