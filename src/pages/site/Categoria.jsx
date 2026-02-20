@@ -88,8 +88,6 @@ export default function Categoria() {
 
   return (
     <>
-      <Header />
-
       <section className="w-full bg-neutral-100 py-16 pt-47">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-2xl md:text-3xl font-bold text-neutral-800 mb-10 capitalize">
