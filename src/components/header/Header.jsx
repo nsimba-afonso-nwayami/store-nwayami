@@ -1,29 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { listarProdutos } from "../../services/produtosService";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [categorias, setCategorias] = useState([]);
 
-  const categorias = [
-    "Ferramentas",
-    "Equipamentos",
-    "Segurança",
-    "Construção",
-    "Elétrica",
-    "Hidráulica",
-    "Soldadura",
-    "Peças",
-    "Tintas",
-    "Parafusos",
-    "Máquinas",
-    "Jardinagem",
-    "Lubrificantes",
-    "EPI",
-  ];
+  useEffect(() => {
+    async function carregarCategorias() {
+      try {
+        const data = await listarProdutos();
+
+        const categoriasUnicas = Array.from(
+          new Set(data.map((p) => p.categoria_nome)),
+        );
+
+        setCategorias(categoriasUnicas);
+      } catch (error) {
+        console.error("Erro ao carregar categorias:", error);
+      }
+    }
+
+    carregarCategorias();
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 w-full bg-neutral-900 border-b border-neutral-800 shadow-lg z-50">
@@ -118,7 +121,7 @@ export default function Header() {
             {categorias.map((cat, index) => (
               <SwiperSlide key={index} style={{ width: "auto" }}>
                 <Link
-                  to={`/categoria/${cat.toLowerCase()}`}
+                  to={`/categoria/${cat.toLowerCase().replaceAll(" ", "-")}`}
                   className="whitespace-nowrap px-4 py-2 bg-neutral-900 text-neutral-50 rounded-lg border border-neutral-700 hover:border-orange-500 hover:text-orange-500 transition-colors text-sm font-semibold"
                 >
                   {cat}
