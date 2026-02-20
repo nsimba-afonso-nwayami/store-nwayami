@@ -6,11 +6,15 @@ export default function Produtos() {
   const [produtos, setProdutos] = useState([]);
   const [visibleCount, setVisibleCount] = useState(16);
   const [loading, setLoading] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState(""); // categoria selecionada
+
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedSubcategory, setSelectedSubcategory] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const formatImageUrl = (url) =>
     url ? url.replace("/media/", "/api/media/") : "";
 
+  // Carregar produtos da API
   useEffect(() => {
     async function carregarProdutos() {
       try {
@@ -22,40 +26,57 @@ export default function Produtos() {
         setLoading(false);
       }
     }
-
     carregarProdutos();
   }, []);
 
-  // Pegar categorias únicas do array
   const categorias = Array.from(new Set(produtos.map((p) => p.categoria_nome)));
+  const subcategorias = selectedCategory
+    ? Array.from(
+        new Set(
+          produtos
+            .filter((p) => p.categoria_nome === selectedCategory)
+            .map((p) => p.subcategoria_nome),
+        ),
+      )
+    : [];
 
-  // Produtos filtrados
-  const produtosFiltrados = selectedCategory
-    ? produtos.filter((p) => p.categoria_nome === selectedCategory)
-    : produtos;
-
-  if (loading) {
-    return (
-      <section className="w-full bg-neutral-100 pt-47 pb-16">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-neutral-600">Carregando produtos...</p>
-        </div>
-      </section>
+  const produtosFiltrados = produtos
+    .filter((p) => !selectedCategory || p.categoria_nome === selectedCategory)
+    .filter(
+      (p) =>
+        !selectedSubcategory || p.subcategoria_nome === selectedSubcategory,
+    )
+    .filter(
+      (p) =>
+        p.descricao.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        p.codigo.toLowerCase().includes(searchTerm.toLowerCase()),
     );
-  }
 
   return (
     <section className="w-full bg-neutral-100 pt-47 pb-16">
       <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-6">
-        {/* Filtros laterais */}
-        <aside className="hidden lg:block w-64 bg-white rounded-xl p-6 shadow sticky top-32 self-start">
-          <h3 className="text-lg font-bold text-neutral-800 mb-4">
+        {/* Filtros e pesquisa */}
+        <aside className="hidden lg:block w-64 bg-white rounded-xl p-6 shadow sticky top-32 self-start flex-col gap-4">
+          {/* Barra de pesquisa */}
+          <input
+            type="text"
+            placeholder="Buscar produtos..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full px-3 py-2 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
+          />
+
+          {/* Categorias */}
+          <h3 className="text-lg font-bold text-neutral-800 mt-4 mb-2">
             Categorias
           </h3>
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-2 mb-4">
             <li>
               <button
-                onClick={() => setSelectedCategory("")}
+                onClick={() => {
+                  setSelectedCategory("");
+                  setSelectedSubcategory("");
+                }}
                 className={`w-full cursor-pointer text-left px-3 py-2 rounded font-semibold transition-colors ${
                   selectedCategory === ""
                     ? "bg-orange-50 text-orange-500"
@@ -68,7 +89,10 @@ export default function Produtos() {
             {categorias.map((cat, idx) => (
               <li key={idx}>
                 <button
-                  onClick={() => setSelectedCategory(cat)}
+                  onClick={() => {
+                    setSelectedCategory(cat);
+                    setSelectedSubcategory("");
+                  }}
                   className={`w-full cursor-pointer text-left px-3 py-2 rounded font-semibold transition-colors ${
                     selectedCategory === cat
                       ? "bg-orange-50 text-orange-500"
@@ -80,18 +104,69 @@ export default function Produtos() {
               </li>
             ))}
           </ul>
+
+          {/* Subcategorias */}
+          {subcategorias.length > 0 && (
+            <>
+              <h3 className="text-lg font-bold text-neutral-800 mb-2">
+                Subcategorias
+              </h3>
+              <ul className="flex flex-col gap-2">
+                <li>
+                  <button
+                    onClick={() => setSelectedSubcategory("")}
+                    className={`w-full text-left px-3 py-2 rounded font-semibold transition-colors ${
+                      selectedSubcategory === ""
+                        ? "bg-orange-50 text-orange-500"
+                        : "hover:bg-orange-50 hover:text-orange-500 text-neutral-700"
+                    }`}
+                  >
+                    Todas
+                  </button>
+                </li>
+                {subcategorias.map((sub, idx) => (
+                  <li key={idx}>
+                    <button
+                      onClick={() => setSelectedSubcategory(sub)}
+                      className={`w-full text-left px-3 py-2 rounded font-semibold transition-colors ${
+                        selectedSubcategory === sub
+                          ? "bg-orange-50 text-orange-500"
+                          : "hover:bg-orange-50 hover:text-orange-500 text-neutral-700"
+                      }`}
+                    >
+                      {sub}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </aside>
 
-        {/* Grid de produtos */}
-        <div className="flex-1">
-          <h2 className="text-2xl md:text-3xl font-bold text-neutral-800 mb-10">
-            {selectedCategory || "Todos os Produtos"}
-          </h2>
-
-          {produtosFiltrados.length === 0 ? (
-            <p className="text-neutral-600">Nenhum produto encontrado.</p>
+        {/* Conteúdo principal */}
+        <div className="flex-1 flex flex-col gap-6">
+          {loading ? (
+            <div className="flex flex-col justify-center items-center h-64 gap-4">
+              <i className="fas fa-spinner fa-spin text-3xl text-orange-500"></i>
+              <p className="text-neutral-600">Carregando produtos...</p>
+            </div>
+          ) : produtosFiltrados.length === 0 ? (
+            <div className="max-w-md mx-auto bg-white rounded-xl shadow p-8 text-center">
+              <i className="fas fa-box-open text-4xl text-orange-500 mb-4"></i>
+              <h2 className="text-xl font-bold text-neutral-800 mb-2">
+                Nenhum produto encontrado
+              </h2>
+              <p className="text-neutral-600 text-sm">
+                Não existem produtos com os filtros aplicados.
+              </p>
+            </div>
           ) : (
             <>
+              <p className="text-neutral-600 mb-2">
+                Mostrando {Math.min(visibleCount, produtosFiltrados.length)} de{" "}
+                {produtosFiltrados.length} produtos
+              </p>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {produtosFiltrados.slice(0, visibleCount).map((produto) => (
                   <div
