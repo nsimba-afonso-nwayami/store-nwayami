@@ -59,7 +59,6 @@ export default function ProdutosDestaque() {
               key={produto.id}
               className="bg-white rounded-xl shadow hover:shadow-lg transition p-4 flex flex-col"
             >
-              {/* ✅ Imagem corrigida */}
               <div className="w-full overflow-hidden rounded-lg mb-4">
                 <img
                   src={formatImageUrl(produto.imagem)}
