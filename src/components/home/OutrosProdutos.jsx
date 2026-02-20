@@ -96,7 +96,10 @@ export default function OutrosProdutos() {
                 </p>
 
                 <Link
-                  to={`/produtos/${produto.id}`}
+                  to={`/produtos/${produto.descricao
+                    .toLowerCase()
+                    .replaceAll(" ", "-")
+                    .replaceAll("/", "")}`}
                   className="mt-auto block text-center bg-orange-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-orange-600 transition"
                 >
                   Ver produto
