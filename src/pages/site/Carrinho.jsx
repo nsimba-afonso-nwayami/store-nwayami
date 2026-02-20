@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import ProdutoImg1 from "../../assets/img/hero1.jpg";
-import ProdutoImg2 from "../../assets/img/hero2.jpg";
+import ProdutoImg1 from "../../assets/img/hero1.png";
+import ProdutoImg2 from "../../assets/img/hero2.png";
 
 const itensCarrinho = [
   {
