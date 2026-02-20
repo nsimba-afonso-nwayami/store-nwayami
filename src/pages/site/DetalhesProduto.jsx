@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { buscarProdutoPorId } from "../../services/produtosService";
+import { buscarProdutoPorSlug } from "../../services/produtosService";
 
 export default function DetalhesProduto() {
-  const { id } = useParams();
+  const { slug } = useParams();
 
   const [produto, setProduto] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -16,7 +16,7 @@ export default function DetalhesProduto() {
   useEffect(() => {
     async function carregarProduto() {
       try {
-        const data = await buscarProdutoPorId(id);
+        const data = await buscarProdutoPorSlug(slug);
         setProduto(data);
       } catch (error) {
         console.error("Erro ao buscar produto:", error);
@@ -27,7 +27,7 @@ export default function DetalhesProduto() {
     }
 
     carregarProduto();
-  }, [id]);
+  }, [slug]);
 
   useEffect(() => {
     if (produto) {
@@ -39,10 +39,9 @@ export default function DetalhesProduto() {
 
   if (loading) {
     return (
-      <section className="w-full bg-neutral-100 py-16 pt-47">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-neutral-600">Carregando produto...</p>
-        </div>
+      <section className="w-full bg-neutral-100 py-16 pt-47 text-center">
+        <i className="fas fa-spinner fa-spin text-3xl text-orange-500 mb-3"></i>
+        <p className="text-neutral-600">Carregando produto...</p>
       </section>
     );
   }
@@ -61,16 +60,14 @@ export default function DetalhesProduto() {
           </div>
         ) : (
           <div className="flex flex-col lg:flex-row gap-10">
-            {/* Imagem */}
             <div className="lg:w-1/2">
               <img
                 src={formatImageUrl(produto.imagem)}
                 alt={produto.descricao}
-                className="w-full h-auto rounded-xl shadow-lg"
+                className="w-full rounded-xl shadow-lg"
               />
             </div>
 
-            {/* Informações */}
             <div className="lg:w-1/2 flex flex-col">
               <h1 className="text-3xl font-bold text-neutral-800 mb-4">
                 {produto.descricao}
